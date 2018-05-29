@@ -23,7 +23,7 @@
   "scripts": {
     "dev": "nuxt",
     "build": "nuxt build",
-    "start": "nuxt start",
+    "start": "HOST=0.0.0.0 PORT=80 nuxt start",
     "heroku-postbuild": "npm run build"
   }
 }
