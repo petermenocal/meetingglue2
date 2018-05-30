@@ -21,22 +21,54 @@
         <p class="measure">Oakland is located on the inner part of the bay area, right across the bridge from San Francisco. You will hear the locals refer to this side of the bay as "The East Bay".</p>
         <p class="small f6 fw6 b"><i class="fa fa-map-marker"></i> {{ $store.state.cvb.address }}. {{ $store.state.cvb.city }} {{ $store.state.cvb.postalCode }}</p>
         <p class="small f6 fw6 b"><i class="fa fa-phone"></i> {{ $store.state.cvb.phoneNumber }}</p>
-    
+        <p class="small f6 fw6 b"><i class="fa fa-link"></i> www.visitoakland.com</p>
+        <div class="flex flex-row flex-wrap">
+          <div class="w-50">
+            <p class="b">Total Hotel Inventory</p>
+            <p><i class="fa fa-bed"></i> 4,000 Sleeping Rooms</p>
+          </div>
+          <div class="w-50">
+            <p class="b">Convention Center</p>
+            <p><i class="fa fa-building"></i> Oakland Convention Center</p>
+          </div>
+          <div class="w-50">
+            <p class="b">Main Airport(s)</p>
+            <p><i class="fa fa-plane"></i> OAK ≈ 10mi from downtown</p>
+            <p><i class="fa fa-plane"></i> SFO ≈ 24mi from downtown</p>
+          </div>
+          <div class="w-50">
+            <p class="b">Transportation Cost</p>
+            <p><i class="fa fa-bus"></i> Bay Area Rapid Transit (BART) ≈ $8.65 one way</p>
+            <p><i class="fa fa-taxi"></i> Taxi ≈ $40 one way</p>
+          </div>
+        </div>
+
         <div class="fl w-100 bg-light-gray br3 near-black">
           <div class="flex flex-row justify-between w-100 ph3">
-            <p class="b ttu dim pointer" v-bind:class="{active: !activeSalesFactPanel}" @click=setActivePanel>Sales staff</p>
-            <p class="b ttu dim pointer" v-bind:class="{active: activeSalesFactPanel}" @click=setActivePanel>Promos</p>
+            <p class="b ttu dim pointer" v-bind:class="{active: !activeSalesFactPanel}" @click=setActivePanel>Promos</p>
+            <p class="b ttu dim pointer" v-bind:class="{active: activeSalesFactPanel}" @click=setActivePanel>Sales staff</p>
           </div>
           <div class="fl w-100 ph3 mt0">
-              <div class="flex flex-column w-100" v-bind:class="{'active-shown': !activeSalesFactPanel}" v-show="!activeSalesFactPanel">
-                <div class="flex flex-row flex-wrap w-100 mb2 bb b--black-20 pv3" v-for="sales in $store.state.cvb.salesStaff" v-bind:key="sales.index">
-                  <span class="w-100 lh-copy f4 b purple"> {{ sales.name }}</span>
-                  <span class="w-100 lh-copy f6 purple">{{ sales.title }}</span>
-                  <a v-bind:href=sales.email class="w-100 black link lh-copy f6">{{ sales.email }}</a>
-                  <a v-bind:href=sales.phone class="w-100 black link lh-copy f6">{{ sales.phone }}</a>
+              <div class="flex flex-row flex-wrap relative" v-bind:class="{'active-shown': activeSalesFactPanel}" v-show="activeSalesFactPanel">
+                <div class="flex flex-column w-two-thirds mb2 bb b--black-20 pv3"  v-for="sales in $store.state.cvb.salesStaff" v-bind:key="sales.index">
+                  <div class="flex flex-row">
+                    <div class="flex w-70">
+                      <img v-bind:src=sales.image style="height: 100px; width:100px;" class="mr2 br4" alt="">
+                      <div class="flex flex-column">
+                        <span class="w-100 lh-copy f4 b purple"> {{ sales.name }}</span>
+                        <span class="w-100 lh-copy f6 purple">{{ sales.title }}</span>
+                        <a v-bind:href=sales.email class="w-100 black link lh-copy f6">{{ sales.email }}</a>
+                        <a v-bind:href=sales.phone class="w-100 black link lh-copy f6">{{ sales.phone }}</a>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div class="absolute w-30 right-0 top-0 mt3 pa3">
+                  <span class="f3 purple fw6">Come Find Us</span>
+                  <p class="f5 lh-copy fw6 gray">Connect Corporate <br><div class="fa fa-clock-o"></div> August 23-25, 2018, Salt Lake City</p>
                 </div>
               </div>
-              <div class="flex flex-column w-100" v-bind:class="{'active-shown': activeSalesFactPanel}" v-show="activeSalesFactPanel">
+              <div class="flex flex-column w-100" v-bind:class="{'active-shown': !activeSalesFactPanel}" v-show="!activeSalesFactPanel">
                 <div class="flex flex-column w-100 mb2 bb b--black-20 pv3" v-for="promos in $store.state.cvb.promotions" v-bind:key="promos.index">
                   <h1 class="f3 fw4">{{ promos.name }}</h1>
                   <a v-bind:href=promos.link class="link b purple dim pointer"><i class="fa fa-link mr2"></i>More info</a>
@@ -48,7 +80,7 @@
     </div>
 
     <div class="fl w-100" id="event-calendar-wrapper">
-      <h1 class="white tc">Events in Oakland</h1>
+      <h1 class="white tc">What's Happening</h1>
       <div class="flex flex-row items-center justify-between" id="event-scroller">
         <div class="relative" style="min-width: 200px" v-bind:key="e.index" v-for="e in events">
           <div class="absolute top-0 pv2 ph4" style="background: rgba(0, 0, 0, 0.85); z-index: 1">
@@ -89,8 +121,31 @@
         <p class="gray">Lorem ipsum dolor sit amet consectetur, adipisicing elit. A pariatur ipsum placeat accusamus, suscipit illum eos sunt eum quae iste accusantium qui, saepe sit quam ex voluptas architecto harum rerum.</p>
         <a class="link dim pointer b" :href=$store.state.cvb.promotions[0].link target="_blank" rel="noopener"><i class="fa fa-link"></i> Visit website</a>
      </div> -->
-      <div class="w-50 ml4 pa3 br3">
-       <Timeline class="timeline" :id="'visitoakland'" :sourceType="'profile'" :options="{  tweetLimit: '10' }"/>
+      <div class="w-50 ml4 pa3 br3 bg-purple-10">
+      <h3 class="tc">Planner reviews</h3>
+      
+      <!-- planner card -->
+      <div class="w-50 center ">
+         <div class="span f5 mt2 fw5 b i">Liklihood you will return to this property<br><br></div>
+        <div class="bg-black br-pill h2  overflow-y-hidden ">
+          <div class="bg-green black b pa2 br-pill h2 shadow-1" @click=adjustPercentage v-bind:style="{ width: percentage1 +'%' }">{{percentage1}}%</div>
+        </div>
+
+        <div class="span f5 mt2 fw5">{{ reviewerAttitude }} <br><br></div>
+        <div class="bg-moon-gray br-pill h1 overflow-y-hidden mt3 ">
+          <div class="bg-blue br-pill h1 shadow-1 w-third" ></div>
+        </div>
+        <div class="span f5 mt2 fw5">Sales contact quality</div>
+        <div class="bg-moon-gray br-pill h1 overflow-y-hidden mt3 ">
+          <div class="bg-green br-pill h1 shadow-1 w-90" ></div>
+        </div>
+        <div class="span f5 mt2 fw5">Convention services contact quality</div>
+        <div class="flex flex-row items-center">
+          <span class="f6 fw1 mv3 w-50"><i class="fa fa-clock-o f6 fw1"></i> May 2018</span>
+          <span class="f6 fw1 mv3 w-50 tr"><img src="/emma.jpg" height="60" style="border-radius: 50%" alt="" class="ba b--white-10 bw4"> <br>Emma S.</span>
+        </div>
+      </div>
+       <Timeline class="timeline" :id="'visitoakland'" :sourceType="'profile'" :options="{  tweetLimit: '10' }"  style="max-height: 350px !important"/>
     </div>
     </div>
     <the-footer></the-footer>
