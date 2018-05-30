@@ -121,31 +121,15 @@
         <p class="gray">Lorem ipsum dolor sit amet consectetur, adipisicing elit. A pariatur ipsum placeat accusamus, suscipit illum eos sunt eum quae iste accusantium qui, saepe sit quam ex voluptas architecto harum rerum.</p>
         <a class="link dim pointer b" :href=$store.state.cvb.promotions[0].link target="_blank" rel="noopener"><i class="fa fa-link"></i> Visit website</a>
      </div> -->
-      <div class="w-50 ml4 pa3 br3 bg-purple-10">
-      <h3 class="tc">Planner reviews</h3>
-      
-      <!-- planner card -->
-      <div class="w-50 center ">
-         <div class="span f5 mt2 fw5 b i">Liklihood you will return to this property<br><br></div>
-        <div class="bg-black br-pill h2  overflow-y-hidden ">
-          <div class="bg-green black b pa2 br-pill h2 shadow-1" @click=adjustPercentage v-bind:style="{ width: percentage1 +'%' }">{{percentage1}}%</div>
+      <div class="w-50 ml4 pa3 br3" style="background: rgba(0, 0, 0, 0.08)">
+      <h3 class="tc">Planner Pro-tips</h3>
+        <div class="fl w-100 mb flex flex-column">
+          <span class="fw5 mb1 purple">Oakland Marriott City Center</span>
+          <span class="gray fw3 f6 mb2">lbcuxyo (username) | Corporate | April 2018</span>
+          <p class="pl4 measure-narrow f6 fw1">Prime location in downtown Oakland. Saved $30 on room rate alone compared to SFO.</p>
+          <p class="pl4 measure-narrow f6 fw1">BART station is a 2 min walk from the hotel. Took 12 minutes to meet a friend at Embarcadero!</p>
+       <Timeline class="timeline" :id="'visitoakland'" :sourceType="'profile'" :options="{  tweetLimit: '10' }"  style="max-height: 420px !important"/>
         </div>
-
-        <div class="span f5 mt2 fw5">{{ reviewerAttitude }} <br><br></div>
-        <div class="bg-moon-gray br-pill h1 overflow-y-hidden mt3 ">
-          <div class="bg-blue br-pill h1 shadow-1 w-third" ></div>
-        </div>
-        <div class="span f5 mt2 fw5">Sales contact quality</div>
-        <div class="bg-moon-gray br-pill h1 overflow-y-hidden mt3 ">
-          <div class="bg-green br-pill h1 shadow-1 w-90" ></div>
-        </div>
-        <div class="span f5 mt2 fw5">Convention services contact quality</div>
-        <div class="flex flex-row items-center">
-          <span class="f6 fw1 mv3 w-50"><i class="fa fa-clock-o f6 fw1"></i> May 2018</span>
-          <span class="f6 fw1 mv3 w-50 tr"><img src="/emma.jpg" height="60" style="border-radius: 50%" alt="" class="ba b--white-10 bw4"> <br>Emma S.</span>
-        </div>
-      </div>
-       <Timeline class="timeline" :id="'visitoakland'" :sourceType="'profile'" :options="{  tweetLimit: '10' }"  style="max-height: 350px !important"/>
     </div>
     </div>
     <the-footer></the-footer>
