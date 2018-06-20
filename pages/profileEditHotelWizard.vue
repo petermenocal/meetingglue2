@@ -5,6 +5,7 @@
       v-model="drawer"
       fixed
       app
+      temporary
     >
       <v-list dense>
         <template v-for="item in items">
@@ -110,28 +111,111 @@
         </v-list>
       </v-menu>
     </v-toolbar>
-    <v-content>
-      <v-container fluid fill-height>
-          <v-jumbotron color="grey lighten-2">
-            <v-container fill-height>
-              <h3 class="display-3">Welcome to the Dashboard</h3>
-              <span class="subheading">Lorem ipsum dolor sit amet, pri veniam forensibus id. Vis maluisset molestiae id, ad semper lobortis cum. At impetus detraxit incorrupte usu, repudiare assueverit ex eum, ne nam essent vocent admodum.</span>
-              <v-divider class="my-3"></v-divider>
-              <div class="title mb-3">Check out our newest features!</div>
-              <v-btn large color="primary" class="mx-0">See more</v-btn>
-            </v-container>
-          </v-jumbotron>
-      </v-container>
+      <v-content>
+    <v-container fluid>
+      <v-layout row wrap style="width: 80vw !important;">
+         <div class="fl w-100">
+  
+    <v-stepper v-model="e1">
+      <v-stepper-header>
+        <template v-for="n in steps">
+          <v-stepper-step
+            :key="`${n}-step`"
+            :step="n"
+            :complete="e1 > n"
+            editable
+          >
+            Step {{ n }}
+          </v-stepper-step>
+          <v-divider v-if="n !== steps" :key="n"></v-divider>
+        </template>
+      </v-stepper-header>
+      <v-stepper-items>
+        <v-stepper-content
+          v-for="n in steps"
+          :step="n"
+          :key="`${n}-content`"
+        >
+          <v-card color="grey lighten-1" class="mb-5" height="500px">
+            <h3>Tell us what you need.</h3>
+            <p class="mb3">Let us know a few particulars about your event and we'll set automatically setup your RFP with some default data.</p>
+            <v-tabs
+              v-model="active"
+              color="cyan"
+              dark
+              slider-color="yellow"
+            >
+              <v-tab
+                v-show="e1 == 1"
+                v-for="n in step1"
+                :key="n"
+                ripple
+              >
+                {{ n.label }}
+              </v-tab>
+              
+              <v-tab
+                v-show="e1 == 2"
+                v-for="n in step2"
+                :key="n"
+                ripple
+              >
+                {{ n.label }}
+              </v-tab>
+              
+              <v-tab-item
+                v-for="n in 3"
+                :key="n"
+              >
+                <v-card flat>
+                  <v-card-text v-if="e1 == 1">
+                    <div><v-date-picker v-model="picker"></v-date-picker></div>
+                  </v-card-text>
+                  <v-card-text v-if="e1 == 2">
+                    <h3>I require rooms for: {{value1}} <span v-show="value1 > 1"> people.</span> <span v-show="value1 == 0"> people.</span>
+                    <span v-show="value1 == 1"> person.</span></h3>
+                    <v-slider v-model="value1" step="1"></v-slider>
+                  </v-card-text>
+                </v-card>
+              </v-tab-item>
+            </v-tabs>
+  
+          </v-card>
+          <v-btn color="primary" @click="nextStep(n)">Continue</v-btn>
+          <v-btn flat>Cancel</v-btn>
+        </v-stepper-content>
+      </v-stepper-items>
+    </v-stepper>
+  </div>
+      </v-layout>
+    </v-container>
     </v-content>
   </v-app>
 </template>
 
 <script>
+
   export default {
     data: () => ({
+      picker: null,
+      picker2: null,
       dialog: false,
       drawer: null,
       dialog3: false,
+      value1: 0,
+      e1: 1,
+      steps: 5,
+      step1: [
+        { label: "Specific dates"},
+        { label: "Date range"},
+        { label: "Date range pattern"},
+        { label: "Manual input"}
+      ],
+    step2: [  
+        { label: "Sleeping rooms & space"},
+        { label: "Sleeping rooms only"},
+        { label: "Meeting space only"},
+      ],
       items: [
         { icon: 'dashboard', text: 'Dashboard', src: '/profileEditHotelDashboard' },
         { icon: 'history', text: 'RFP History', src: '/profileEditHotelHistory' },
@@ -143,6 +227,18 @@
     }),
     props: {
       source: String
-    }
+    },
+    methods: {
+      onInput (val) {
+        this.steps = parseInt(val)
+      },
+      nextStep (n) {
+        if (n === this.steps) {
+          this.e1 = 1
+        } else {
+          this.e1 = n + 1
+        }
+      }
+  }
   }
 </script>

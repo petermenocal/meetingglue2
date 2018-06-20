@@ -5,6 +5,7 @@
       v-model="drawer"
       fixed
       app
+      temporary
     >
       <v-list dense>
         <template v-for="item in items">
