@@ -4,14 +4,18 @@ import session from 'express-session'
 export default {
   head: {
     title: 'Auth Routes',
+    script: [
+      { src: 'https://unpkg.com/vuetify/dist/vuetify.js"' }
+    ],
     meta: [
       { charset: 'utf-8' },
       { name: 'viewport', content: 'width=device-width, initial-scale=1' },
-      { hid: 'description', content: 'Auth Routes example' }
+      { hid: 'description', content: 'Auth Routes example' },
     ]
   },
 
-  modules: ['@nuxtjs/toast'],
+  modules: ['@nuxtjs/toast', 'nuxt-material-design-icons'],
+  plugins: ['~/plugins/vuetify'],
   toast: {
     position: 'top-center',
     duration: '5000',

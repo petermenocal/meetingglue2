@@ -1,14 +1,14 @@
 <template>
-  <div id="app" class="container">  
+  <div class="container w-100" >
     <the-navigation-bar></the-navigation-bar>
-    <div class="fl w-100 bg-near-white pa3">
+    <div class="fl w-100 bg-near-white black pa3">
       <h1>Courtyard Oakland: Downtown</h1>
       <div class="fl w-100 relative">
         <img src="/demo-hero-hotelProfile.png" alt="">
       </div>
       <div class="fl w-100">
         <div class="flex flex-row items-center justify-center h3 mt2">
-          <div class="flex w-50"><h4>123 Main Street. Oakland, California</h4></div>
+          <div class="flex w-50 "><h4>123 Main Street. Oakland, California</h4></div>
           <div class="flex items-center justify-end w-50">
             <div class="mr3">
               <i class="fa fa-twitter"></i>
@@ -22,17 +22,15 @@
             <div class="mr3">
               <i class="fa fa-yelp"></i>
             </div>
-            <button class="pa3 bg-purple white ba b--purple br3 b ttu">Contact hotel</button>
+           <v-btn color="info">Contact hotel</v-btn>
           </div>
         </div>
       </div>
     </div>
 
-    <div class="fl w-100 bg-white-10 pa2 white">
+    <div class="fl tc w-100 bg-near-black white pa2">
       <h1 class="tc">Planner reviews</h1>
-      <div class=" w-30 bg-blue br3 tc center b pa3 white">
-        <i class="fa fa-edit"></i> Edit your review
-      </div>
+      <v-btn color="info"><i class="fa fa-edit mr4"></i> Edit your review</v-btn>
       <!-- planner card -->
       <div class="w-50 center ">
          <div class="span f5 mt2 fw5 b i">Liklihood you will return to this property<br><br></div>
@@ -57,7 +55,7 @@
     </div>
 
     <div class="fl w-100" id="event-calendar-wrapper">
-        <h1 class="white tc">Venues near this hotel</h1>
+        <h1 class="black tc">Venues near this hotel</h1>
         <div class="flex flex-row items-center justify-between" id="event-scroller">
           <div class="relative" style="min-width: 200px" v-bind:key="e.index" v-for="e in events">
             <div class="absolute top-0 pv2 ph4" style="background: rgba(0, 0, 0, 0.85); z-index: 1">
@@ -68,47 +66,63 @@
           </div>
         </div>
       </div>
-    <div class="flex justify-between flex-row flex-wrap w-100 bg-white pa4">
-      <div class="w-100 ml4 pa3 br3">
+    <div class="flex justify-between flex-row flex-wrap w-100 bg-white pa3">
+      <div class="w-100 ml4 pa3 br3 black">
         <h1>Promotions and Programs</h1>
         <img src="~/assets/img/demo-promos.jpg">
         <h1>Book 25+ Total Rooms and Everyone Wins!</h1>
         <h4>#MeetInOakland and receive up to $3000 towards your program.</h4>
-        <p>Lose the lanyard and go beyond the boardroom. Savor our trendy culinary scene, immerse yourself in our vibrant arts and nightlife, and soak up the proactive spirit The Town is known for. Explore the possibilities and envision your next meeting in the Sunny Side of the Bay!</p>
+        <p class="measure">Lose the lanyard and go beyond the boardroom. Savor our trendy culinary scene, immerse yourself in our vibrant arts and nightlife, and soak up the proactive spirit The Town is known for. Explore the possibilities and envision your next meeting in the Sunny Side of the Bay!</p>
       </div>
-      <div class="w-100 bg-light-gray br3 pa3">
+      <div class="w-100 bg-light-gray near-black br3 pa3">
         <h1 class="tc"><span class="fw1">Posts by </span>Courtyard Oakland: Downtown</h1>
         <ul class="list tl">
-          <li class="update mb3 bg-white pa4 ba b--black-20" style="z-index:0">
+          <li class="update mb3 bg-white pa4 bb b--black-10" style="z-index:0">
             <div class="fl w-50 dib">
-              <img src="~/assets/img/demo-updates.jpg" alt=""  height="auto" width="100%">
+              <img src="~/assets/img/demo-updates.jpg" alt=""  height="250px" width="100%">
             </div>
-            <div class="fl w-50 pa4">
-              <h3 class="mb0">This is an update.</h3>
-              <p class="f6">Lorem ipsum dolor sit amet consectetur adipisicing elit. Perspiciatis fuga ea quod dolor. Iure eum tempore voluptates itaque saepe animi, velit quo repellendus! Quas quasi non natus alias sit iste.</p>
-              <p class="mt0 gray f6 small">May 29, 2018</p>
+            <div class="fl w-50 pa4 near-black lh-copy">
+              <v-container fluid fill-height>
+                <v-layout align-center justify-center>
+                  <v-flex md8>
+                    <v-card  class="elevation-0">
+                      <p class="mt0 gray f4 small">May 29, 2018</p>
+                      <h2>This is an update.</h2>
+                      <p >Lorem ipsum dolor sit amet consectetur adipisicing elit. Perspiciatis fuga ea quod dolor. Iure eum tempore voluptates itaque saepe animi, velit quo repellendus! Quas quasi non natus alias sit iste.</p>
+                    </v-card>
+                  </v-flex>
+                </v-layout>
+              </v-container>
             </div>
           </li>
-          <li class="update mb3 bg-white pa4 ba b--black-20" style="z-index:0">
+          <li class="update mb3 bg-white pa4" style="z-index:0">
             <div class="fl w-50 dib">
-              <img src="~/assets/img/demo-updates.jpg" alt=""  height="auto" width="100%">
+              <img src="~/assets/img/demo-updates.jpg" alt=""  height="250px" width="100%">
             </div>
-            <div class="fl w-50 pa4">
-              <h3 class="mb0">This is an update.</h3>
-              <p class="f6">Lorem ipsum dolor sit amet consectetur adipisicing elit. Perspiciatis fuga ea quod dolor. Iure eum tempore voluptates itaque saepe animi, velit quo repellendus! Quas quasi non natus alias sit iste.</p>
-              <p class="mt0 gray f6 small">May 29, 2018</p>
+            <div class="fl w-50 pa4 near-black lh-copy">
+              <v-container fluid fill-height>
+                <v-layout align-center justify-center>
+                  <v-flex md8>
+                    <v-card  class="elevation-0">
+                      <p class="mt0 gray f4 small">May 29, 2018</p>
+                      <h2>This is an update.</h2>
+                      <p >Lorem ipsum dolor sit amet consectetur adipisicing elit. Perspiciatis fuga ea quod dolor. Iure eum tempore voluptates itaque saepe animi, velit quo repellendus! Quas quasi non natus alias sit iste.</p>
+                    </v-card>
+                  </v-flex>
+                </v-layout>
+              </v-container>
             </div>
           </li>
         </ul>
       </div>
     </div>
-      <div class="fl w-100">
+      <div class="fl w-100 bg-white black">
         <div class="fl w-50" style="overflow: scroll; height: 740px;">
-          <h1 class="white tc">Twitter</h1>
+          <h1 class="tc">Twitter</h1>
           <Timeline :id="'courtyardhotels'" :sourceType="'profile'" :options="{  tweetLimit: '5' }"/>
         </div>
         <div class="fl w-50">
-  <h1 class="white tc">Virtual tour</h1>
+  <h1 class="tc">Virtual tour</h1>
     <div class="fl w-100 tc bg-black">
       <div class="fl w-100">
         <div class="panel" id="panel-1" style="overflow: hidden;object-fit:cover;" v-show="activePanel == 1">
