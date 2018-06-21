@@ -28,5 +28,8 @@
     "build": "nuxt build",
     "start": "HOST=0.0.0.0 PORT=80 nuxt start",
     "heroku-postbuild": "npm run build"
+  },
+  "devDependencies": {
+    "vue-loader": "^15.2.4"
   }
 }
