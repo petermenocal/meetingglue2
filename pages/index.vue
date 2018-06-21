@@ -80,7 +80,7 @@
     </div>
 
     <div class="fl w-100 pa3 white" style="background: #181825 !important">
-      <div class="fl w-third gold">
+      <div class="fl w-30 gold">
         <h1><i class="fa fa-arrow-circle-up"></i> Most popular</h1>
         <v-card class="w-80 mb4">
           <v-card-media
@@ -130,7 +130,7 @@
         </v-card>
       </div>
 
-      <div class="fl w-third green">
+      <div class="fl w-40 green">
         <h1><i class="fa fa-fire"></i> Hot openings</h1>
         <v-card class="mb3">
         <v-card-media
@@ -186,7 +186,7 @@
       </v-card>
       </div>
 
-      <div class="fr light-red">
+      <div class="w-30 ph3 fl light-red">
         <h1><i class="fa fa-question-circle"></i> Polls</h1>
         <v-container fluid px-0 >
         <h3>What type of planner are you?</h3>
