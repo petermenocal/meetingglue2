@@ -169,6 +169,7 @@
               >
                 <v-card flat>
                   <v-card-text v-if="e1 == 1">
+                       
                     <div><v-date-picker v-model="picker"></v-date-picker></div>
                   </v-card-text>
                   <v-card-text v-if="e1 == 2">
@@ -205,6 +206,10 @@
       value1: 0,
       e1: 1,
       steps: 5,
+      selectItems: [
+        'and', 'or', 'through'
+      ],
+      selectedItem: null,
       step1: [
         { label: "Specific dates"},
         { label: "Date range"},

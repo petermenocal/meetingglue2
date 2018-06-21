@@ -62,8 +62,8 @@
         <v-card flat>
           <v-card-text v-show="n == 1">
             <div class="flex flex-column w-100" v-bind:class="{'active-shown': !activeSalesFactPanel}" v-show="!activeSalesFactPanel">
-                <div class="flex flex-column w-100 mb2 bb b--black-20 pv3" v-for="promos in $store.state.cvb.promotions" v-bind:key="promos.index">
-                  <h1 class="f3 fw4">{{ promos.name }}</h1>
+                <div class="flex flex-column w-100 mb2 bb b--black-20 pv3" v-for="promos in 4" v-bind:key="promos.index">
+                  <h1 class="f3 fw4">Promo Name</h1>
                   <a v-bind:href=promos.link class="link b purple dim pointer"><i class="fa fa-link mr2"></i>More info</a>
                 </div>
               </div>

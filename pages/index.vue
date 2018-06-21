@@ -1,12 +1,11 @@
 <template>
      <div class="w-80 center elevation-15 bg-white">
-    <div>
-      <div class="flex flex-column items-center justify-center w-100 tc h5" id="hero">
+    <div class="w-100 flex  flex-row">
+      <div class="flex flex-column items-center justify-center w-70 tc h5" id="hero">
         <h1 class="mb0">Welcome to RFP bliss.</h1>
         <p class="mb0">Built by meeting planners for meeting planners.</p>
       </div>
-    </div>
-    <div class="fl w-100 pa3 near-black white pb5" style="background: rgb(63,64,108)">
+      <div class="fl w-80 pa3 near-black white pb5" style="background: rgb(63,64,108)">
       <h1 class="tc">Promotions</h1>
       <div class="fl w-100">
         <v-expansion-panel light popout>
@@ -40,24 +39,9 @@
           
       </div>
     </div>
-    <div class="fl w-100 pa5 near-black">
-      <div class="fr w-50">
-        <h1>About us</h1>
-        <p>We created Meeting Glue out of necessity.</p>
-        <p class="measure">We are a planner only marketplace for the conference and event industry. Meeting Glue provides easy-to-access resources for the research and negotiation phases of planning an event. Our online community of planners actively provide insider tips from their experiences with suppliers. This creates a unique environment for group business research and engagement.</p>
-        <p class="b mt3 mb4">Imagine an RFP distribution system that’s fun...</p>
-      </div>
-      <div class="fl w-50 bg-white pa4 br3">
-        <div class="flex flex-row flex-wrap items-center bg-white h5 justify-center">
-          <img src="/logo-hyatt.jpg" height="100" width="auto" alt="">
-          <img src="/logo-mariott.jpg" height="100" width="auto" alt="">
-          <img src="/logo-hilton.jpg" height="100" width="auto" alt="">
-          <img src="/logo-ihg.jpg" height="100" width="auto" alt="">
-          <img src="/logo-caesars.jpg" height="100" width="auto" alt="">
-          <img src="/logo-mgm.jpg" height="100" width="auto" alt="">
-        </div>
-      </div>
+    
     </div>
+    
     <div class="flex flex-row justify-center items-center w-100 bg-green">
         <div class="w-20">
           &nbsp;
@@ -94,42 +78,6 @@
         </div>
       </div>
     </div>
-
-    <div class="fl w-100 pa3">
-      <h1 class="black">Need Dates</h1>
-
-      <div class="flex flex-row flex-wrap w-100 bg-black-10 bb b--black shadow-2">
-        <div class="flex justify-between w-100 pa3 white" style="background: #484977">
-          <span class="b">Miami, FL</span>
-          <span class="b green">NOBU HOTEL</span>
-        </div>
-      </div>
-
-      <div class="flex flex-row flex-wrap w-100 bg-black-10 bb b--black shadow-2">
-        <div class="flex justify-between w-100 pa3 white" style="background: #484977">
-          <span class="b">Miami, FL</span>
-          <span class="b green">NOBU HOTEL</span>
-        </div>
-      </div>
-
-      <div class="flex flex-row flex-wrap w-100 bg-black-10 bb b--black shadow-2">
-        <div class="flex justify-between w-100 pa3 white" style="background: #484977">
-          <span class="b">Miami, FL</span>
-          <span class="b green">NOBU HOTEL</span>
-        </div>
-      </div>
-
-      <div class="flex flex-row flex-wrap w-100 bg-black-10 bb b--black shadow-2">
-        <div class="flex justify-between w-100 pa3 white" style="background: #484977">
-          <span class="b">Miami, FL</span>
-          <span class="b green">NOBU HOTEL</span>
-        </div>
-      </div>
-
-          
-
-    </div>
-    
 
     <div class="fl w-100 pa3 white" style="background: #181825 !important">
       <div class="fl w-third gold">
@@ -268,6 +216,63 @@
           </v-container> 
       </div>
     </div>
+
+
+
+    <div class="fl w-100 pa3">
+      <h1 class="black">Need Dates</h1>
+
+      <div class="flex flex-row flex-wrap w-100 bg-black-10 bb b--black shadow-2">
+        <div class="flex justify-between w-100 pa3 white" style="background: #484977">
+          <span class="b">Miami, FL</span>
+          <span class="b green">NOBU HOTEL</span>
+        </div>
+      </div>
+
+      <div class="flex flex-row flex-wrap w-100 bg-black-10 bb b--black shadow-2">
+        <div class="flex justify-between w-100 pa3 white" style="background: #484977">
+          <span class="b">Miami, FL</span>
+          <span class="b green">NOBU HOTEL</span>
+        </div>
+      </div>
+
+      <div class="flex flex-row flex-wrap w-100 bg-black-10 bb b--black shadow-2">
+        <div class="flex justify-between w-100 pa3 white" style="background: #484977">
+          <span class="b">Miami, FL</span>
+          <span class="b green">NOBU HOTEL</span>
+        </div>
+      </div>
+
+      <div class="flex flex-row flex-wrap w-100 bg-black-10 bb b--black shadow-2">
+        <div class="flex justify-between w-100 pa3 white" style="background: #484977">
+          <span class="b">Miami, FL</span>
+          <span class="b green">NOBU HOTEL</span>
+        </div>
+      </div>
+
+          
+
+    </div>
+    
+<div class="fl w-100 pa5 near-black">
+      <div class="fr w-50">
+        <h1>About us</h1>
+        <p>We created Meeting Glue out of necessity.</p>
+        <p class="measure">We are a planner only marketplace for the conference and event industry. Meeting Glue provides easy-to-access resources for the research and negotiation phases of planning an event. Our online community of planners actively provide insider tips from their experiences with suppliers. This creates a unique environment for group business research and engagement.</p>
+        <p class="b mt3 mb4">Imagine an RFP distribution system that’s fun...</p>
+      </div>
+      <div class="fl w-50 bg-white pa4 br3">
+        <div class="flex flex-row flex-wrap items-center bg-white h5 justify-center">
+          <img src="/logo-hyatt.jpg" height="100" width="auto" alt="">
+          <img src="/logo-mariott.jpg" height="100" width="auto" alt="">
+          <img src="/logo-hilton.jpg" height="100" width="auto" alt="">
+          <img src="/logo-ihg.jpg" height="100" width="auto" alt="">
+          <img src="/logo-caesars.jpg" height="100" width="auto" alt="">
+          <img src="/logo-mgm.jpg" height="100" width="auto" alt="">
+        </div>
+      </div>
+    </div>
+    
     <the-footer></the-footer>
   </div>
 </template>
@@ -304,6 +309,7 @@
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
+    height: 500px;
   }
   input {
     background: black;
