@@ -15,11 +15,10 @@
         </div>
     </div>
   </v-toolbar>
-        
   <v-content>
     <v-container fluid fill-height>
       <v-layout align-start justify-center>
-        <v-flex md10>
+        <v-flex>
           <nuxt></nuxt>
         </v-flex>
         </v-layout>

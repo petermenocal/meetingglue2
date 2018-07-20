@@ -1,5 +1,5 @@
 <template>
-     <div class="w-80 center elevation-15 bg-white">
+     <div class="w-90 center elevation-15 bg-white">
     <div class="w-100 flex  flex-row">
       <div class="flex flex-column items-center justify-center w-70 tc h5" id="hero">
         <h1 class="mb0">Welcome to RFP bliss.</h1>
@@ -304,19 +304,20 @@
 
 
 <style scoped>
-  #hero {
-    background: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), url('/demo-hero-index.png');
-    background-size: cover;
-    background-position: center;
-    background-repeat: no-repeat;
-    height: 500px;
-  }
-  input {
-    background: black;
-    font: white;
-    font-weight: bold;
-    text-align: center;
-    border-radius: 20px;
-    border: solid black 1px;
-  }
+#hero {
+  background: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)),
+    url("/demo-hero-index.png");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  height: 500px;
+}
+input {
+  background: black;
+  font: white;
+  font-weight: bold;
+  text-align: center;
+  border-radius: 20px;
+  border: solid black 1px;
+}
 </style>

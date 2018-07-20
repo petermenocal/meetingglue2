@@ -1,5 +1,5 @@
-import Vue from 'vue'
-import Vuetify from 'vuetify'
+import Vue from "vue"
+import Vuetify from "vuetify"
 
 // You can also specify those components you are going to use for "a la carte" build:
 // https://github.com/vuetifyjs/nuxt/blob/master/template/plugins/vuetify.js

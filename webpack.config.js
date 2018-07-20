@@ -1,41 +1,38 @@
 // webpack.config.js
-const path = require('path')
-const { VueLoaderPlugin } = require('vue-loader')
+const path = require("path")
+const { VueLoaderPlugin } = require("vue-loader")
 
 module.exports = {
-  mode: 'development',
+  mode: "development",
   module: {
     rules: [
       {
         test: /\.vue$/,
-        loader: 'vue-loader'
+        loader: "vue-loader"
       },
       // this will apply to both plain .js files
       // AND <script> blocks in vue files
       {
         test: /\.js$/,
-        loader: 'babel-loader'
+        loader: "babel-loader"
       },
       // this will apply to both plain .css files
       // AND <style> blocks in vue files
       {
         test: /\.css$/,
-        use: [
-          'vue-style-loader',
-          'css-loader'
-        ]
+        use: ["vue-style-loader", "css-loader"]
       },
       // this will apply to both plain .scss files
       // AND <style lang="scss"> blocks in vue files
       {
         test: /\.scss$/,
         use: [
-          'vue-style-loader',
-          'css-loader',
+          "vue-style-loader",
+          "css-loader",
           {
-            loader: 'sass-loader',
+            loader: "sass-loader",
             options: {
-              data: '$color: red;'
+              data: "$color: red;"
             }
           }
         ]
